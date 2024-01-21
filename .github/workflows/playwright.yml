@@ -7,7 +7,12 @@ on:
   workflow_dispatch:
     inputs:
       testFile:
-        description: 'Run specific test suite: login.spec.js, inventory.spec.js or checkout.spec.js'
+        description: |
+          Run specific test suite by puting name:
+          - login.spec.js
+          - inventory.spec.js
+          - checkout.spec.js
+          - live empty for run all
         required: false  
   schedule:
       - cron: '0 0 * * *'  
