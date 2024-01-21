@@ -4,6 +4,11 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      testFile:
+        description: 'Run specific test suite: login, inventory or checkout'
+        required: false  
   schedule:
       - cron: '0 0 * * *'  
 jobs:
