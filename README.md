@@ -7,8 +7,8 @@ Automated testing of the Sauce Demo page using the Playwright test framework wit
 
 | Tech                                                    | Description                              |
 | ------------------------------------------------------- | ---------------------------------------- |
-| [Playwright](X)                  | Test Automation Framework   |
-| [JavaScript](X)                  | Just JavaScript ;)   |
+| Playwright                  | Test Automation Framework   |
+| JavaScript                  | Just JavaScript ;)   |
 
 ## Installation 💾
 
