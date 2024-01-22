@@ -55,6 +55,6 @@ Daily Schedule: The workflow is scheduled to run every day at midnight.
 1. Go to https://github.com/szymonszymon1/sauceDemoTestAutomation/actions
 2. From Actions, left menu select Playwright test
 3. On right site click on Run workflow button
-4. Select file to run specific test suite or leve empty to run all
+4. Select file to run specific test suite or leave empty to run all
 5. Click on green Run workflow button
 6. After test execution test report will be available to download from latest workflow
