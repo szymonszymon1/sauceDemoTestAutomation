@@ -23,8 +23,18 @@ export class BasePage {
         if (!translation) {
             throw new Error(`No translation available for key ${translationKey} in language ${this.language}`);
         }
-        console.warn(translation)
-
         return translation;
+    }
+
+    async isElementVisible(selector) {
+        await selector.waitFor();
+		const isVisible = await selector.isVisible();
+		expect(isVisible).toBeTruthy();
+	}
+
+    async verifyElementText(selectorString, text) {
+        const selector = this.page.locator(selectorString);
+        const textValue = await selector.textContent();
+        return expect(textValue.trim()).toEqual(text);
     }
 }

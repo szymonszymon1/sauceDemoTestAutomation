@@ -1,0 +1,43 @@
+Test Strategy
+1. Introduction:
+The purpose of this test strategy is to verify a high-quality of website https://www.saucedemo.com/v1/index.html.
+
+2. Test Levels:
+Smoke testing to quickly assess the stability of the application.
+Manual Testing: Exploratory testing, Compatibility and usability testing.
+Automation Testing: Functional testing.
+Regression Testing to ensure existing functionalities are not impacted by new releases.
+
+3. Test Types:
+Functional Testing: Validate each feature's functionality.
+Usability Testing: Assess the website's user-friendliness.
+Compatibility Testing: Ensure compatibility across browsers and devices.
+
+4. Traceability:
+Establish traceability by linking test cases to requirements and user stories.
+Connect with proper id manual and automation tests.
+
+5. Test Environment:
+Perorm test on production https://www.saucedemo.com/v1/index.html ;)
+
+6. Automation Framework:
+Automation framework build on Playwright with JavaScript.
+Use Page Object Model for better maintainability.
+
+7. Test report
+Create a test report from each step of testing.
+
+8. Features
+
+Top 3 Most Important Features:
+1. User Authentication and Authorization: Ensure secure and reliable user login/logout functionality.
+2. Product Ordering Process: Validate the end-to-end flow of selecting, adding to cart, and purchasing products.
+3. Mobile Responsiveness: Confirm the website's usability and functionality across various mobile devices.
+
+3 Least Important Features:
+1. Social Media Integration: Validate that social media links work.
+2. Footer: validate display images and text.
+3. Hamburger menu, except logout option.
+
+9. PWA
+The Playwright framework is specifically designed for parallel testing across multiple browsers and mobile views. This means that with each regression test run, we can seamlessly execute tests across various browsers and diverse mobile viewport configurations simultaneously.

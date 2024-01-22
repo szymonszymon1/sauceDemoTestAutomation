@@ -52,4 +52,10 @@ export class InventoryPage extends BasePage {
         const productIndex = allProducts.indexOf(product);
         await this.products.nth(productIndex).click();
     }
+
+    async addToProductByTitle(product) {
+        const allProducts = await this.getAllProductTitles()
+        const productIndex = allProducts.indexOf(product);
+        await this.addToCart.nth(productIndex).click();
+    }
 }

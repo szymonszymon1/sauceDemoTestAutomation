@@ -18,8 +18,27 @@ export const inventoryItemLocator = {
   backButton: '//*[@class="inventory_details_back_button"]',
   addToCartButton: '//*[@class="btn_primary btn_inventory"]'
 };
-export const banerLocator = {
+export const bannerLocator = {
   cartCounter: '//*[@id="shopping_cart_container"]//span',
+  cartBasket: '//*[@data-icon="shopping-cart"]',
   hamburgerIcon: '//*[text()="Open Menu"]',
-  logoutButton: '//*[@id="logout_sidebar_link"]'
+  logoutButton: '//*[@id="logout_sidebar_link"]',
+  banner: '//*[@class="product_label" or @class="subheader"]'
+};
+export const cartLocator = {
+  checkoutButton: '//*[@href="./checkout-step-one.html"]'
+};
+export const checkoutStepOneLocator = {
+  firstNameInput: '//*[@data-test="firstName"]',
+  lastNameInput: '//*[@data-test="lastName"]',
+  postalCodeInput: '//*[@data-test="postalCode"]',
+  continueButton: '//*[@type="submit"]',
+};
+export const checkoutStepTwoLocator = {
+  finishButton: '//*[@href="./checkout-complete.html"]',
+};
+export const checkoutCompleteLocator = {
+  ponyImg: '//*[@src="img/pony-express.png"]',
+  headerText: '//*[@class="complete-header"]',
+  descriptionText: '//*[@class="complete-text"]',
 };
