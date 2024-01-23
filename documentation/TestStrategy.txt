@@ -23,6 +23,8 @@ Perorm test on production https://www.saucedemo.com/v1/index.html ;)
 6. Automation Framework:
 Automation framework build on Playwright with JavaScript.
 Use Page Object Model for better maintainability.
+Designing a test framework to support two different languages, English and French.
+Integrating tests with CI/CD involves setting up your testing framework to run automatically.
 
 7. Test report
 Create a test report from each step of testing.

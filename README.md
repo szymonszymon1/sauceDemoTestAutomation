@@ -19,15 +19,16 @@ Automated testing of the Sauce Demo page using the Playwright test framework wit
    ```bash
    git clone [repository_url]
    cd [repository_folder]
+   npm init playwright@latest
 ## Available commands
 
 | Script command / variable           | Comand                   |Description|
 | ------------------------- | ----------------------------- | --- |
+| `$env:LANGUAGE='en'`||Environment variable to select English translations, used by default.|
+| `$env:LANGUAGE='fr'`||Environment variable to select French translations, will fail as expected, page is only displayed in English.|
 | `npm test npxplaywright test` | npx playwright test|Runs the end-to-end tests.|
 | `npm test_ui`| playwright test --ui|Starts the interactive UI mode.|
 | `npx playwright test --debug`|npx playwright test --debug|Runs the tests in debug mode.|
-| `$env:LANGUAGE='en'`||Environment variable to select English translations, used by default.|
-| `$env:LANGUAGE='fr'`||Environment variable to select French translations, will fail as expected, page is only displayed in English.|
 
 ## CI/CD 🔱
 This project has CI/CD configured using GitHub Actions.
@@ -58,3 +59,6 @@ Daily Schedule: The workflow is scheduled to run every day at midnight.
 4. Select file to run specific test suite or leave empty to run all
 5. Click on green Run workflow button
 6. After test execution test report will be available to download from latest workflow
+
+## Project documentation
+In the "documentation" folder, you'll find files named "ManualTestCases.txt," providing descriptions for basic functional tests. Additionally, there is a "TestStrategy.txt" file outlining the high-level test strategy for the saucedemo website. The tests are written following the Behavior-Driven Development (BDD) approach. In the initial tests, there is a tag associating the manual test with the automated test through a sample ID.

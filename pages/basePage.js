@@ -13,10 +13,6 @@ export class BasePage {
 
     async getTranslation(translationKey) {
         const languageTranslations = this.language === 'fr' ? fr : en;
-        
-        if (!languageTranslations) {
-            throw new Error(`No translations available for language ${this.language}`);
-        }
 
         const translation = languageTranslations[translationKey];
         

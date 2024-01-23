@@ -19,5 +19,20 @@ export const en = {
 
 };
 export const fr = {
-    'Epic sadface: Sorry, this user has been locked out.': 'Visage triste épique : Désolé, cet utilisateur a été verrouillé.'
+    'Epic sadface: Sorry, this user has been locked out.': 'Visage triste épique : Désolé, cet utilisateur a été verrouillé.',
+    'Epic sadface: Username and password do not match any user in this service': 'Renault',
+    'Sauce Labs Bike Light': 'Peugeot',
+    'Name (Z to A)': 'Baguette ;)',
+    'Sauce Labs Backpack': 'Sac à dos Sauce Labs',
+    'Sauce Labs Bike Light': 'Lumière de vélo Sauce Labs',
+    'Sauce Labs Bolt T-Shirt': 'T-shirt Sauce Labs Bolt',
+    'Sauce Labs Fleece Jacket': 'Veste polaire Sauce Labs',
+    'Sauce Labs Onesie': 'Body Sauce Labs',
+    'Test.allTheThings() T-Shirt (Red)': 'Renault ;)',
+    'THANK YOU FOR YOUR ORDER': 'MERCI POUR VOTRE COMMANDE',
+    'Finish': 'Terminer',
+    'Checkout: Overview': 'Récapitulatif du paiement',
+    'Checkout: Your Information': 'Vos informations de paiement',
+    'Your Cart': 'Votre panier',
+    'Products': 'Produits'
 };
