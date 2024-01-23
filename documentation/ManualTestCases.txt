@@ -1,0 +1,150 @@
+  @tag_id_1110
+  Scenario: Login as standard user
+    Given the user opens the login page
+    When the user logs in with standard credentials
+    Then the user should be redirected to the inventory page
+    And the banner text should be "Products"
+
+  @tag_id_1111
+  Scenario: Login as locked user
+    Given the user opens the login page
+    When the user logs in with locked user credentials
+    Then the user should see the validation message "Epic sadface: Sorry, this user has been locked out."
+
+  @tag_id_1112
+  Scenario: Try to login with incorrect password
+    Given the user opens the login page
+    When the user logs in with incorrect password
+    Then the user should see the validation message "Epic sadface: Username and password do not match any user in this service."
+
+  @tag_id_1113
+  Scenario: Try to login with incorrect username
+    Given the user opens the login page
+    When the user logs in with incorrect username
+    Then the user should see the validation message "Epic sadface: Username and password do not match any user in this service."
+
+  @tag_id_1114
+  Scenario: Login as standard user and logout
+    Given the user opens the login page
+    When the user logs in with standard credentials
+    Then the user should be redirected to the inventory page
+    And the banner text should be "Products"
+    When the user logs out
+    Then the user should be redirected to the login page
+
+  @tag_id_1310
+  Scenario: Buy a specific product
+    Given the user is logged in and on the inventory page
+    When the user adds the product "Sauce Labs Bolt T-Shirt" to the basket
+    Then the basket counter should show 1
+    And the banner text should be "Products"
+
+    When the user goes to the cart basket
+    Then the basket counter should show 1
+    And the banner text should be "Your Cart"
+
+    When the user goes to the checkout
+    Then the user should fill in the information with:
+      | First Name | Last Name     | Postal Code |
+      | Szymon      | MySecondName  | 12-325      |
+    And the basket counter should show 1
+    And the banner text should be "Checkout: Your Information"
+    And the user clicks the Continue button
+
+    Then the basket counter should show 1
+    And the banner text should be "Checkout: Overview"
+    When the user clicks the Finish button
+
+    Then the basket counter should show 1
+    And the banner text should be "Finish"
+    And the Checkout Complete Page should display the logo
+    And the header text should be "THANK YOU FOR YOUR ORDER"
+
+  @tag_id_1210
+  Scenario: Add the cheapest product to the basket
+    Given the user is logged in and on the inventory page
+    When the user adds the cheapest product to the basket
+    Then the basket counter should show 1
+
+  @tag_id_1211
+  Scenario: Sort products with "Name (Z to A)"
+    Given the user is logged in and on the inventory page
+    When the user sorts products by name in descending order
+    Then the product list should be sorted in descending order by name
+
+  @tag_id_1212
+  Scenario: Select a specific product and go to details page
+    Given the user is logged in and on the inventory page
+    When the user clicks on the product "Sauce Labs Bike Light"
+    Then the user should be on the details page for "Sauce Labs Bike Light"
+    And the product name should be "Sauce Labs Bike Light"
+    When the user adds the product to the basket
+    Then the basket counter should show 1
+    And the user goes back to the inventory page
+    And the basket counter should still show 1
+
+ Scenario: Verify displayed information on the inventory page
+    Given the user is logged in and on the inventory page
+    Then there are 6 products displayed on the page
+    And each product has the following information:
+      | Title               | Description       | Price | Picture of Product | Add to Cart Button |
+      | Sauce Labs Backpack | Product 1 Desc    | $10   | [Image]            | ADD TO CART        |
+      | Product 2 Title     | Product 2 Desc    | $15   | [Image]            | ADD TO CART        |
+      | Product 3 Title     | Product 3 Desc    | $20   | [Image]            | ADD TO CART        |
+      | Product 4 Title     | Product 4 Desc    | $25   | [Image]            | ADD TO CART        |
+      | Product 5 Title     | Product 5 Desc    | $30   | [Image]            | ADD TO CART        |
+      | Product 6 Title     | Product 6 Desc    | $35   | [Image]            | ADD TO CART        |
+
+  Scenario: Add product from Inventory Page
+    Given the user is logged in and on the inventory Page
+    When user click on "ADD TO CART" 
+    Then button is displayed with name "REMOVE"
+    When user go to Cart 
+    Then Product is added to Cart with QTY 1
+
+  Scenario: Add product from Inventory Page Details
+    Given the user is logged in and on the inventory Page
+    When user click on product
+    Then product page is displayed
+    When user click on "ADD TO CART" 
+    Then button is displayed with name "REMOVE"
+    When user click on "Back"
+    Then user is redirected to Inventory page
+    And Product is added to Cart
+
+  Scenario: Continue shopping
+    Given cart view is displayed with added 1 product
+    When user click on button "CONTINUE SHOPPING"
+    Then is redirected to Inventory page
+    And product is still in the basket
+
+  Scenario: Remove product from basket
+    Given cart view is displayed with added 1 product
+    When user click on button "REMOVE"
+    Then product is removed from basket
+
+  Scenario: Verify user data validation on checkout-step-one
+    Given page checkout-step-one is displayed 
+    When user without fill any data click on "CONTINUE"
+    Then Error "Error: First Name is required" is displayed
+    And user is not redirected to any other page
+
+  Scenario: Verify cancel on checkout-step-one page
+    Given page checkout-step-one is displayed 
+    When user without fill any data click on "CANCEL"
+    Then User is redirected to Cart view
+
+  Scenario: Verify displayed information on checkout-step-two page
+    Given the user is on the checkout-step-two page with 1 product "Sauce Labs Backpack"
+    Then the product information should be displayed as follows:
+      | QTY | DESCRIPTION                 | Price  |
+      | 1   | Sauce Labs Backpack        | $29.99 |
+
+    And the payment information should be displayed as follows:
+      | Payment Method | SauceCard #31337 |
+      | Shipping Method | FREE PONY EXPRESS DELIVERY! |
+      
+    And the order summary should be displayed as follows:
+      | Item total | $29.99 |
+      | Tax        | $2.40  |
+      | Total      | $32.39 |
